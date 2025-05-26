@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de multas</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #d3d3d3, #556677);
+            margin: 50px;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Identificação</h1>
+    Vivendo em: <input type="text" name="txtpais" id="txtpais">.
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+
+        function calcular() {
+            var txtv = window.document.getElementById('txtpais')
+            var res = window.document.getElementById('res')
+            var pais = txtpais.value
+            res.innerHTML = ` <p> Você mora em <strong>${pais}.</strong></p>`
+
+            if (pais == 'Brasil') {
+                res.innerHTML += `<p>Você é <strong>Brasileiro(a)!</strong></p>`
+            } else {
+            res.innerHTML += `<p>Você é estrangeiro(a).</p> `
+            }
+        }
+
+    </script>
+
+</body>
+</html>
